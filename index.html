@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>สวัสดีวันศุกร์ มหาโชค มหาลาภ 🌟</title>
+
+  <!-- Google Fonts: Prompt & Noto Serif Thai -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@600;800;900&family=Prompt:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Lucide Icons & Canvas Confetti -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            thai: ['Prompt', 'sans-serif'],
+            serifThai: ['Noto Serif Thai', 'serif'],
+          },
+          colors: {
+            gold: {
+              300: '#FDE047',
+              400: '#FACC15',
+              500: '#EAB308',
+              600: '#CA8A04',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'spin-slow': 'spin 12s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+            'glow': 'glow 2s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px) rotate(0deg)' },
+              '50%': { transform: 'translateY(-15px) rotate(2deg)' },
+            },
+            glow: {
+              '0%': { filter: 'drop-shadow(0 0 15px rgba(59, 130, 246, 0.8))' },
+              '100%': { filter: 'drop-shadow(0 0 35px rgba(234, 179, 8, 1))' }
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Prompt', sans-serif;
+      background: radial-gradient(circle at center, #0284c7 0%, #0369a1 35%, #0f172a 85%, #020617 100%);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Shiny Golden Text Effect */
+    .text-gold-gradient {
+      background: linear-gradient(135deg, #FFF7ED 0%, #FDE047 30%, #EAB308 70%, #CA8A04 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-blue-glow {
+      text-shadow: 0 0 20px rgba(56, 189, 248, 0.8), 0 0 40px rgba(14, 165, 233, 0.6);
+    }
+
+    /* Glassmorphism Card */
+    .glass-card {
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(250, 204, 21, 0.3);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 30px rgba(14, 165, 233, 0.3);
+    }
+
+    /* Particle Canvas background overlay */
+    #bg-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+<body class="text-white flex items-center justify-center min-h-screen p-4 sm:p-6 relative">
+
+  <!-- Background Particle Canvas -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- Glowing Orbs in Background -->
+  <div class="fixed top-1/4 left-10 w-72 h-72 bg-sky-400/20 rounded-full blur-3xl animate-pulse-slow pointer-events-none"></div>
+  <div class="fixed bottom-1/4 right-10 w-96 h-96 bg-yellow-500/15 rounded-full blur-3xl animate-pulse-slow pointer-events-none"></div>
+
+  <!-- Main Container Card -->
+  <main class="relative z-10 w-full max-w-2xl glass-card rounded-3xl p-6 sm:p-10 text-center animate-float border border-gold-500/40">
+    
+    <!-- Top Decorative Flower Aura -->
+    <div class="flex justify-center mb-4">
+      <div class="relative flex items-center justify-center">
+        <div class="absolute w-24 h-24 bg-gold-400/30 rounded-full blur-xl animate-ping"></div>
+        <div class="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gradient-to-tr from-sky-400 via-gold-400 to-sky-200 p-1 shadow-2xl animate-spin-slow">
+          <div class="w-full h-full bg-slate-900 rounded-full flex items-center justify-center">
+            <span class="text-4xl sm:text-5xl">🪷</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Badge -->
+    <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-sky-950/80 border border-sky-400/40 mb-6 text-sky-300 text-xs sm:text-sm font-semibold tracking-wide shadow-inner">
+      <i data-lucide="sparkles" class="w-4 h-4 text-gold-400 animate-spin"></i>
+      <span>ศุกร์แห่งชาติ — HAPPY FRIDAY</span>
+      <i data-lucide="sparkles" class="w-4 h-4 text-gold-400 animate-spin"></i>
+    </div>
+
+    <!-- Grand Headline -->
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-black font-serifThai tracking-tight mb-2 text-gold-gradient animate-glow leading-tight">
+      สวัสดีวันศุกร์
+    </h1>
+    
+    <p class="text-sky-200 text-sm sm:text-base mb-8 font-light tracking-widest text-blue-glow">
+      ✨ มหาโชค มหาลาภ ไร้โอที สุขภาพดี รับทรัพย์อลังการ ✨
+    </p>
+
+    <!-- Dynamic Blessing Card -->
+    <div class="relative bg-gradient-to-b from-sky-950/90 to-slate-900/90 border border-gold-400/50 rounded-2xl p-6 mb-8 shadow-2xl">
+      <!-- Decorative Corners -->
+      <div class="absolute top-2 left-2 text-gold-400 text-xs">╔</div>
+      <div class="absolute top-2 right-2 text-gold-400 text-xs">╗</div>
+      <div class="absolute bottom-2 left-2 text-gold-400 text-xs">╚</div>
+      <div class="absolute bottom-2 right-2 text-gold-400 text-xs">╝</div>
+
+      <p id="blessing-text" class="text-lg sm:text-2xl font-serifThai text-amber-100 font-semibold leading-relaxed transition-all duration-300">
+        "ขอให้วันศุกร์นี้มีแต่ความสุข ไร้ความทุกข์ ไร้โอที เงินเข้ากระเป๋าหนักๆ งานเสร็จไว ปาร์ตี้ทันใจ สาธุ ๙๙"
+      </p>
+    </div>
+
+    <!-- Interactive Action Buttons -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      
+      <!-- Random Blessing Button -->
+      <button id="btn-blessing" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-amber-500 via-gold-400 to-amber-600 hover:from-amber-400 hover:to-gold-300 text-slate-950 font-bold text-base shadow-lg shadow-gold-500/30 hover:shadow-gold-500/50 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2">
+        <i data-lucide="dices" class="w-5 h-5"></i>
+        <span>สุ่มคำอวยพรสายมู</span>
+      </button>
+
+      <!-- Fireworks Celebration Button -->
+      <button id="btn-fireworks" class="w-full py-4 px-6 rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 hover:from-sky-400 hover:to-indigo-500 text-white font-bold text-base shadow-lg shadow-sky-500/30 hover:shadow-sky-500/50 transition-all duration-300 transform active:scale-95 flex items-center justify-center gap-2">
+        <i data-lucide="party-popper" class="w-5 h-5 text-gold-300"></i>
+        <span>จุดพลุฉลองศุกร์แห่งชาติ!</span>
+      </button>
+
+    </div>
+
+    <!-- Secondary Action: Copy & Share -->
+    <button id="btn-copy" class="w-full py-3 px-4 rounded-xl bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 text-sky-200 text-sm font-medium transition-colors flex items-center justify-center gap-2">
+      <i data-lucide="copy" class="w-4 h-4"></i>
+      <span id="copy-text">คัดลอกคำอวยพรไปส่งไลน์</span>
+    </button>
+
+    <!-- Footer Quote -->
+    <div class="mt-8 pt-6 border-t border-slate-800/80 text-xs text-sky-300/60 flex items-center justify-between">
+      <span>🗓️ ศุกร์ที่ <span id="current-date"></span></span>
+      <span>💖 ส่งต่อความสุขให้คนที่คุณรัก</span>
+    </div>
+
+  </main>
+
+  <!-- ==========================================
+      JAVASCRIPT (Effects, Sound & Magic)
+  ========================================== -->
+  <script>
+    // Initialize Icons
+    lucide.createIcons();
+
+    // 1. Set Dynamic Thai Date
+    const dateOptions = { year: 'numeric', month: 'long', day: 'numeric', weekday: 'long' };
+    document.getElementById('current-date').innerText = new Date().toLocaleDateString('th-TH', dateOptions);
+
+    // 2. Blessings List
+    const blessings = [
+      "ขอให้วันศุกร์นี้มีแต่ความสุข ไร้ความทุกข์ ไร้โอที เงินเข้ากระเป๋าหนักๆ งานเสร็จไว ปาร์ตี้ทันใจ สาธุ ๙๙",
+      "ศุกร์สดใส เงินไหลมาเทมา สุขภาพแข็งแรง เจ้านายรัก ลูกน้องเมตตา งานเสร็จตามเวลา เลิกงานปุ๊บพักผ่อนปั๊บ!",
+      "สวัสดีวันศุกร์ ขอให้ชีวิตสว่างไสวดั่งแสงทอง สมหวังทุกประการ โบนัสเข้าแบบจัดเต็ม ปังๆ รวยๆ!",
+      "สุขกาย สุขใจ ต้อนรับวันศุกร์สุดสัปดาห์ ยิ้มรับความสำเร็จ พักผ่อนให้เต็มที่ มีโชคดีเข้ามาไม่ขาดสาย",
+      "ศุกร์นี้ขอให้เจองานง่าย โค้ดไร้บั๊ก บิลไร้หนี้ เงินปังไม่มีแผ่ว รับทรัพย์ฉ่ำๆ ตลอดวัน!"
+    ];
+
+    let currentIdx = 0;
+    const blessingText = document.getElementById('blessing-text');
+
+    // Web Audio API Synth Sound Effect (ไม่ต้องโหลดไฟล์เสียงภายนอก)
+    function playChimeSound() {
+      try {
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        const notes = [523.25, 659.25, 783.99, 1046.50]; // C5, E5, G5, C6 (Celebratory Chord)
+        notes.forEach((freq, index) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, audioCtx.currentTime + index * 0.08);
+          gain.gain.setValueAtTime(0.15, audioCtx.currentTime + index * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + index * 0.08 + 0.6);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(audioCtx.currentTime + index * 0.08);
+          osc.stop(audioCtx.currentTime + index * 0.08 + 0.6);
+        });
+      } catch (e) {
+        // Audio fallback
+      }
+    }
+
+    // 3. Random Blessing Action
+    document.getElementById('btn-blessing').addEventListener('click', () => {
+      playChimeSound();
+      currentIdx = (currentIdx + 1) % blessings.length;
+      
+      // Animation Fade Effect
+      blessingText.style.opacity = '0';
+      blessingText.style.transform = 'scale(0.95)';
+      
+      setTimeout(() => {
+        blessingText.innerText = `"${blessings[currentIdx]}"`;
+        blessingText.style.opacity = '1';
+        blessingText.style.transform = 'scale(1)';
+      }, 200);
+
+      // Trigger Light Confetti
+      confetti({
+        particleCount: 40,
+        spread: 60,
+        origin: { y: 0.7 },
+        colors: ['#FACC15', '#38BDF8', '#FFFFFF']
+      });
+    });
+
+    // 4. Epic Fireworks Action
+    document.getElementById('btn-fireworks').addEventListener('click', () => {
+      playChimeSound();
+      
+      // Multi-stage Fireworks
+      const count = 200;
+      const defaults = { origin: { y: 0.7 } };
+
+      function fire(particleRatio, opts) {
+        confetti(Object.assign({}, defaults, opts, {
+          particleCount: Math.floor(count * particleRatio)
+        }));
+      }
+
+      fire(0.25, { spread: 26, startVelocity: 55, colors: ['#FACC15', '#EAB308'] });
+      fire(0.2, { spread: 60, colors: ['#38BDF8', '#0284C7'] });
+      fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+      fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, colors: ['#FFFFFF', '#FDE047'] });
+      fire(0.1, { spread: 120, startVelocity: 45 });
+    });
+
+    // 5. Copy to Clipboard
+    document.getElementById('btn-copy').addEventListener('click', () => {
+      const textToCopy = `💙 สวัสดีวันศุกร์ 💙\n${blessings[currentIdx]}\n\nขอให้มีความสุขในวันศุกร์แห่งชาตินะครับ! ✨`;
+      navigator.clipboard.writeText(textToCopy).then(() => {
+        const copyTextBtn = document.getElementById('copy-text');
+        copyTextBtn.innerText = 'คัดลอกสำเร็จ! นำไปวางในไลน์ได้เลย 🚀';
+        setTimeout(() => {
+          copyTextBtn.innerText = 'คัดลอกคำอวยพรไปส่งไลน์';
+        }, 3000);
+      });
+    });
+
+    // Initial Confetti Welcome
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        confetti({
+          particleCount: 70,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: ['#FACC15', '#38BDF8', '#FFFFFF']
+        });
+      }, 500);
+    });
+
+    // 6. Background Floating Gold Dust Particles Canvas
+    const canvas = document.getElementById('bg-canvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2.5 + 0.5;
+        this.speedY = -(Math.random() * 0.5 + 0.2);
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random() * 0.7 + 0.3;
+        this.color = Math.random() > 0.4 ? '#FACC15' : '#38BDF8';
+      }
+      update() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        if (this.y < 0) this.reset();
+      }
+      draw() {
+        ctx.fillStyle = this.color;
+        ctx.globalAlpha = this.opacity;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 60; i++) {
+      particles.push(new Particle());
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      requestAnimationFrame(animateParticles);
+    }
+    animateParticles();
+  </script>
+</body>
+</html>
